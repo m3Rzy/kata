@@ -1,16 +1,23 @@
+import java.util.List;
+
 public class Kata {
     public static void main(String[] args) {
-        System.out.println(basicMath("/", 4, 2));
+        Object[] arr = {1, "2", 3, "4", "5"};
+        int s = sum(List.of(arr));
+        System.out.println(s);
     }
 
-    public static Integer basicMath(String op, int v1, int v2)
-    {
-        return switch (op) {
-            case "+" -> v1 + v2;
-            case "-" -> v1 - v2;
-            case "/" -> v1 / v2;
-            case "*" -> v1 * v2;
-            default -> 0;
-        };
+    public static int sum(List<?> mixed) {
+        int sum = 0;
+
+        for (Object element : mixed) {
+            if (element instanceof String) {
+                sum += Integer.parseInt((String) element);
+            } else if (element instanceof Integer) {
+                sum += (int) element;
+            }
+        }
+
+        return sum;
     }
 }
