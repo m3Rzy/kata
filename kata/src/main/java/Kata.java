@@ -1,16 +1,16 @@
 public class Kata {
     public static void main(String[] args) {
-        System.out.println(smash("hello", "world", "this", "is", "great"));
+        System.out.println(basicMath("/", 4, 2));
     }
 
-    public static String smash(String... words) {
-        StringBuilder sentence = new StringBuilder();
-        for (int i = 0; i < words.length; i++) {
-            sentence.append(words[i]);
-            if (i < words.length - 1) {
-                sentence.append(" ");
-            }
-        }
-        return sentence.toString();
+    public static Integer basicMath(String op, int v1, int v2)
+    {
+        return switch (op) {
+            case "+" -> v1 + v2;
+            case "-" -> v1 - v2;
+            case "/" -> v1 / v2;
+            case "*" -> v1 * v2;
+            default -> 0;
+        };
     }
 }
