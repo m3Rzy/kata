@@ -1,9 +1,13 @@
 public class Kata {
     public static void main(String[] args) {
-        System.out.println(repeatStr(3, "lol"));
+        System.out.println(simpleMultiplication(2));
     }
 
-    public static String repeatStr(final int repeat, final String string) {
-        return string.repeat(repeat);
+    public static int simpleMultiplication(int n) {
+        if (n % 2 == 0) {
+            return n * 8;
+        } else {
+            return n * 9;
+        }
     }
 }
